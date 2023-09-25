@@ -5,7 +5,6 @@ map("n", "gf", "gf", { noremap = true, silent = true, desc = "Go to file" })
 
 -- Splits
 map("n", "<A-q>", ":bd<CR>", { noremap = true, silent = true, desc = "Splits quit" })
-map("n", "<A-Q>", "<cmd>q!<CR>", { noremap = true, silent = true, desc = "Splits force quit" })
 map("n", "<A-v>", ":vnew +set\\ buftype=nofile<CR>", { noremap = true, silent = true, desc = "Splits vertical" })
 map("n", "<A-s>", ":new +set\\ buftype=nofile<CR>", { noremap = true, silent = true, desc = "Splits horizontal" })
 

@@ -3,6 +3,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
+        "folke/neodev.nvim",
         { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
@@ -46,7 +47,15 @@ return {
 
             opts.desc = "Show documentation for what is under cursor"
             map("n", "K", vim.lsp.buf.hover, opts)
+
+            vim.bo.omnifunc = "v:lua.vim.lsp.omnifunc"
+
+            if client.server_capabilities.inlayHintProvider then
+                vim.lsp.inlay_hint(bufnr, true)
+            end
         end
+
+        vim.diagnostic.config { virtual_text = false }
 
         -- Change the Diagnostic symbols in the sign column (gutter)
         local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
@@ -77,21 +86,43 @@ return {
                             [vim.fn.expand("$VIMRUNTIME/lua")] = true,
                             [vim.fn.stdpath("config") .. "/lua"] = true,
                         },
+                        checkThirdParty = false,
                     },
                     telemetry = {
                         enable = false,
                     },
                     hint = {
-                        enable = true,
+                        enable = false
                     },
                 },
+            },
+        })
+
+        lspconfig["phpactor"].setup({
+            on_attach = on_attach,
+            filetypes = { "php", "blade" },
+            init_options = {
+                ["language_server_worse_reflection.inlay_hints.enable"] = true,
+                ["language_server_worse_reflection.inlay_hints.params"] = true,
+                ["code_transform.import_globals"] = true,
+                ["language_server_phpstan.enabled"] = true,
+                -- ["language_server_worse_reflection.inlay_hints.types"] = true,
+                ["language_server_configuration.auto_config"] = false,
+                ["language_server_phpstan.level"] = 7,
+            },
+            handlers = {
+                ["textDocument/inlayHint"] = function(err, result, ...)
+                    for _, res in ipairs(result) do
+                        res.label = res.label .. ": "
+                    end
+                    vim.lsp.handlers["textDocument/inlayHint"](err, result, ...)
+                end,
             },
         })
 
         local servers = {
             "cssls",
             "html",
-            "phpactor",
             "vimls",
             "lemminx",
             "tsserver",

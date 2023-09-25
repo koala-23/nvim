@@ -36,4 +36,3 @@ require("lazy").setup({ { import = "erick.plugins" }, { import = "erick.plugins.
         },
     },
 })
-

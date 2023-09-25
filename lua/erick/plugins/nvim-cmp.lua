@@ -19,7 +19,7 @@ return {
         "onsails/lspkind-nvim",
         { "L3MON4D3/LuaSnip", version = "v2.*" },
     },
-    event = { "BufRead", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
         require("luasnip.loaders.from_vscode").load({ paths = { "./my-snippets" } })
 
@@ -74,8 +74,8 @@ return {
                 { name = 'path' },
                 { name = 'nvim_lsp' },
                 { name = 'nvim_lua' },
-                { name = 'buffer',  keyword_length = 5 },
                 { name = 'luasnip' },
+                { name = 'buffer',  keyword_length = 5 },
             }),
             formatting = {
                 format = lspkind.cmp_format({

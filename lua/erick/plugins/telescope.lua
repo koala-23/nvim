@@ -155,7 +155,7 @@ return {
             "<leader>fp",
             function()
                 return require("telescope").extensions.file_browser.file_browser({
-                    cwd = "~/.config/nvim-2/lua/erick/",
+                    cwd = "~/.config/nvim-2/lua/erick/plugins",
                     prompt_title = " Neovim Config ",
                 })
             end,

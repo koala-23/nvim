@@ -2,6 +2,7 @@ return {
     {
         'rose-pine/neovim',
         name = 'rose-pine',
+        lazy = false,
         priority = 1000,
         config = function()
             require("rose-pine").setup({
@@ -26,12 +27,8 @@ return {
                     dark = "mocha",
                 },
                 trnasparent_background = true,
-                styles = {                   -- Handles the styles of general hi groups (see `:h highlight-args`):
-                    comments = { "italic" }, -- Change the style of comments
-                },
-                integrations = {
-                    notify = true,
-                },
+                styles = { comments = { "italic" } },
+                integrations = { notify = true },
             })
             -- vim.cmd.colorscheme "catppuccin"
         end
@@ -61,6 +58,7 @@ return {
     -- brackground dark
     {
         "EdenEast/nightfox.nvim",
+        lazy = false,
         priority = 1000,
         config = function()
             require("nightfox").setup({
@@ -80,14 +78,46 @@ return {
         priority = 1000,
         config = function()
             require('github-theme').setup({
-              options = {
+                options = {
                     transparent = true,
                     styles = {
                         comments = "italic",
                     }
                 }
             })
-            vim.cmd.colorscheme "github_dark_tritanopia"
+            -- vim.cmd.colorscheme "github_dark_tritanopia"
         end,
+    },
+    {
+        "wuelnerdotexe/vim-enfocado",
+        lazy = false,
+        priority = 1000,
+        init = function()
+            vim.g.enfocado_style = "neon"
+            vim.cmd([[
+            augroup enfocado_customization
+                autocmd!
+                autocmd ColorScheme enfocado highlight Normal ctermbg=NONE guibg=NONE
+                autocmd ColorScheme enfocado highlight NormalFloat ctermbg=NONE guibg=NONE
+                augroup END
+            ]])
+        end,
+        config = function()
+            -- vim.cmd.colorscheme "enfocado"
+        end,
+    },
+    {
+        "AstroNvim/astrotheme",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("astrotheme").setup({
+                style = {
+                    transparent = true,
+                    italic_comments = true,
+                }
+            })
+            vim.cmd.colorscheme("astrodark")
+        end
     }
 }
