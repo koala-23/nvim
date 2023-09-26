@@ -100,13 +100,14 @@ return {
 
         lspconfig["phpactor"].setup({
             on_attach = on_attach,
+            capabilities = capabilities,
             filetypes = { "php", "blade" },
             init_options = {
                 ["language_server_worse_reflection.inlay_hints.enable"] = true,
                 ["language_server_worse_reflection.inlay_hints.params"] = true,
                 ["code_transform.import_globals"] = true,
                 ["language_server_phpstan.enabled"] = true,
-                -- ["language_server_worse_reflection.inlay_hints.types"] = true,
+                ["language_server_worse_reflection.inlay_hints.types"] = true,
                 ["language_server_configuration.auto_config"] = false,
                 ["language_server_phpstan.level"] = 7,
             },
@@ -123,9 +124,9 @@ return {
         local servers = {
             "cssls",
             "html",
+            "tsserver",
             "vimls",
             "lemminx",
-            "tsserver",
             "marksman",
             "tailwindcss",
         }

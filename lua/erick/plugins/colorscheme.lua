@@ -103,7 +103,7 @@ return {
             ]])
         end,
         config = function()
-            -- vim.cmd.colorscheme "enfocado"
+            vim.cmd.colorscheme "enfocado"
         end,
     },
     {
@@ -117,7 +117,7 @@ return {
                     italic_comments = true,
                 }
             })
-            vim.cmd.colorscheme("astrodark")
+            -- vim.cmd.colorscheme("astrodark")
         end
     }
 }

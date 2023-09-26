@@ -18,8 +18,8 @@ return {
                     "diagnostics",
                     "diff",
                     {
-                        require("noice").api.statusline.mode.get,
-                        cond = require("noice").api.statusline.mode.has,
+                        require("noice").api.status.mode.get,
+                        cond = require("noice").api.status.mode.has,
                         color = { fg = "#ff9e64" },
                     },
                 },
@@ -29,7 +29,7 @@ return {
             winbar = {
                 lualine_a = {},
                 lualine_b = {},
-                lualine_c = { "filename"},
+                lualine_c = { "filename" },
                 lualine_x = {},
                 lualine_y = {},
                 lualine_z = {},
@@ -37,7 +37,7 @@ return {
             inactive_winbar = {
                 lualine_a = {},
                 lualine_b = {},
-                lualine_c = { "filename"},
+                lualine_c = { "filename" },
                 lualine_x = {},
                 lualine_y = {},
                 lualine_z = {},
