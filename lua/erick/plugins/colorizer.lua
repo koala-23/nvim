@@ -3,7 +3,7 @@ return {
     event = "BufReadPost,BufNewFile",
     config = function()
         require("colorizer").setup {
-            filetypes = {"html", "css", "blade", "php", "lua"},
+            filetypes = {"html", "css", "blade", "php"},
             user_default_options = {
                 RGB = true,          -- #RGB hex codes
                 RRGGBB = true,       -- #RRGGBB hex codes

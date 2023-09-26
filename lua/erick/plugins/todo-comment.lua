@@ -1,12 +1,9 @@
 return {
     "folke/todo-comments.nvim",
-    dependencies = "nvim-lua/plenary.nvim",
+    cmd = { "TodoTrouble", "TodoTelescope" },
     event = { "BufReadPost", "BufNewFile" },
-    opts = {
-        highlight = {
-            keyword = "fg"
-        }
-    },
+    config = true,
+    -- stylua: ignore
     keys = {
         { "]t",         function() require("todo-comments").jump_next() end, desc = "Next ToDo comment" },
         { "[t",         function() require("todo-comments").jump_prev() end, desc = "Previous ToDo comment" },
