@@ -1,8 +1,9 @@
 return {
-    "williamboman/mason-lspconfig.nvim",
+    "williamboman/mason.nvim",
     event = { "BufReadPre", "BufNewFile" },
+    cmd = "Mason",
     dependencies = {
-        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
         "jayp0521/mason-null-ls.nvim",
     },
     config = function()

@@ -95,7 +95,7 @@ return {
             },
             window = {
                 completion = {
-                    border = "rounded",
+                    border =  "rounded",
                     winhighlight = "Normal:CmpNormal,CursorLine:MyCursorLine",
                 },
                 documentation = {

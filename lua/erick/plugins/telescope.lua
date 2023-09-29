@@ -36,7 +36,7 @@ return {
         require("telescope").setup({
             defaults = {
                 initial_mode = "insert",
-                file_ignore_patterns = { "%.zip", "lazy-lock.json", "node_modules", "live-server", "vendor"},
+                file_ignore_patterns = { "%.zip", "lazy-lock.json", "node_modules", "live-server", "vendor" },
                 prompt_prefix = "  ",
                 selection_caret = "󱞩 ",
                 winblend = 0,
@@ -160,17 +160,31 @@ return {
                 })
             end,
             desc = "Open neovim config",
-            opts,
+            opts
         },
         {
             "<leader>fb",
             function()
-                return require("telescope").extensions.file_browser.file_browser({  path = "%:p:h", file_ignore_patterns = {} })
+                return require("telescope").extensions.file_browser.file_browser({
+                    path = "%:p:h",
+                    file_ignore_patterns = {}
+                })
             end,
             desc = "File browser relative",
             opts,
         },
-        { "<leader>fk", "<cmd>Telescope keymaps<cr>", desc = "Keymaps", opts },
+        {
+            "<leader>db",
+            function()
+                return require("telescope").extensions.file_browser.file_browser({
+                    cwd = "~/codigo/databases",
+                    prompt_title = " Databases SQLite ",
+                })
+            end,
+            desc = "DB SQLite",
+            opts
+        },
+        { "<leader>fk", "<cmd>Telescope keymaps<cr>",   desc = "Keymaps",   opts },
         { "<leader>fa", "<cmd>Telescope help_tags<cr>", desc = "Help tags", opts },
     },
 }

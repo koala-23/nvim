@@ -1,9 +1,10 @@
 return {
     "Exafunction/codeium.vim",
     event = { "BufReadPre", "BufNewFile" },
-    config = function()
-        -- Change '<C-g>' here to any keycode you like.
+    init = function()
         vim.g.codeium_disable_bindings = 1
+    end,
+    config = function()
         vim.keymap.set('i', '<A-Enter>', function() return vim.fn['codeium#Accept']() end, { expr = true })
         vim.keymap.set('i', '<A-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
         vim.keymap.set('i', '<A-.>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })

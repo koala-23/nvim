@@ -3,7 +3,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
-        "folke/neodev.nvim",
+        -- "folke/neodev.nvim",
         { "antosha417/nvim-lsp-file-operations", config = true },
     },
     config = function()
@@ -32,9 +32,6 @@ return {
 
             opts.desc = "Format code"
             map("n", "<A-f>", vim.lsp.buf.format, opts)
-
-            opts.desc = "Show buffer diagnostics"
-            map("n", "<leader>fd", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
 
             opts.desc = "Show line diagnostics"
             map("n", "<leader>vd", vim.diagnostic.open_float, opts)

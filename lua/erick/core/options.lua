@@ -46,3 +46,7 @@ opt.pumheight = 20      -- Maximo numero de entradas en un popup
 opt.pumblend = 0        -- Para transparencia de popup
 vim.o.langmenu = "es_ES.utf8"
 vim.o.helplang = "es"
+
+-- Highlight bracket pairs
+vim.opt.showmatch = true
+vim.opt.matchtime = 10
