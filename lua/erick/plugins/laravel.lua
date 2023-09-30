@@ -7,9 +7,9 @@ return {
     },
     cmd = { "Sail", "Artisan", "Composer", "Npm", "Laravel", "LaravelInfo" },
     keys = {
-        { "<leader>ls", ":Artisan serve<cr>",      desc = "Laravel Server",               noremap = true, silent = true },
-        { "<leader>la", ":Laravel artisan<cr>",    desc = "Laravel Application Commands", noremap = true, silent = true },
-        { "<leader>lr", ":Laravel routes<cr>",     desc = "Laravel Application Routes",   noremap = true, silent = true },
+        { "<leader>ls", ":Artisan serve<cr>",   desc = "Laravel Server",               noremap = true, silent = true },
+        { "<leader>la", ":Laravel artisan<cr>", desc = "Laravel Application Commands", noremap = true, silent = true },
+        { "<leader>lr", ":Laravel routes<cr>",  desc = "Laravel Application Routes",   noremap = true, silent = true },
     },
     config = function()
         vim.g.laravel_log_level = "debug"

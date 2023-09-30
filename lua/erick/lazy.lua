@@ -13,6 +13,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ { import = "erick.plugins" }, { import = "erick.plugins.lsp" } }, {
+    default = {
+        lazy = true
+    },
     ui = { border = "rounded" },
     checker = {
         enabled = true,

@@ -57,19 +57,12 @@ return {
     },
     -- brackground dark
     {
-        "EdenEast/nightfox.nvim",
+        "bluz71/vim-nightfly-colors",
         lazy = false,
         priority = 1000,
-        config = function()
-            require("nightfox").setup({
-                options = {
-                    transparent = true,
-                    styles = {
-                        comments = "italic",
-                    }
-                }
-            })
-            -- vim.cmd.colorscheme("nightfox")
+        init = function()
+            vim.g.nightflyTransparent = true
+            vim.cmd [[colorscheme nightfly]]
         end
     },
     {
@@ -103,7 +96,7 @@ return {
             ]])
         end,
         config = function()
-            vim.cmd.colorscheme "enfocado"
+            -- vim.cmd.colorscheme "enfocado"
         end,
     },
     {
@@ -119,5 +112,5 @@ return {
             })
             -- vim.cmd.colorscheme("astrodark")
         end
-    }
+    },
 }
