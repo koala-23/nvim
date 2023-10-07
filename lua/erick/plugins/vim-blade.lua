@@ -7,5 +7,5 @@ return {
             ['cache'] = 'endcache',
         }
     end,
-    ft = { "blade", "php", "blade.php" },
+    ft = "blade"
 }

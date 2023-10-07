@@ -100,7 +100,6 @@ return {
             filetypes = { "php", "blade" },
             init_options = {
                 ["language_server_worse_reflection.inlay_hints.enable"] = true,
-                ["language_server_worse_reflection.inlay_hints.types"] = false,
                 ["language_server_worse_reflection.inlay_hints.params"] = true,
             },
             handlers = {
@@ -117,6 +116,7 @@ return {
             "cssls",
             "html",
             "vimls",
+            "yamlls",
             "lemminx",
             "tsserver",
             "marksman",

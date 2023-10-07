@@ -55,6 +55,16 @@ return {
             -- vim.cmd.colorscheme("tokyonight")
         end
     },
+    {
+        "rebelot/kanagawa.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require("kanagawa").setup({
+                transparent = true
+            })
+        end
+    },
     -- brackground dark
     {
         "bluz71/vim-nightfly-colors",
@@ -62,7 +72,17 @@ return {
         priority = 1000,
         init = function()
             vim.g.nightflyTransparent = true
-            vim.cmd [[colorscheme nightfly]]
+            -- vim.cmd [[colorscheme nightfly]]
+        end
+    },
+    {
+        "bluz71/vim-moonfly-colors",
+        name = "moonfly",
+        lazy = false,
+        priority = 1000,
+        init = function ()
+            vim.g.moonflyTransparent = true
+            vim.cmd [[colorscheme moonfly]]
         end
     },
     {

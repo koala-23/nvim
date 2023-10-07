@@ -43,7 +43,7 @@ return {
                 },
                 opts = {
                     enter = true,
-                    render = "plain",
+                    render = "compact",
                     format = { "{message}" },
                     replace = true,
                     close = {
@@ -59,7 +59,7 @@ return {
                 },
                 opts = {
                     enter = true,
-                    render = "plain",
+                    render = "compact",
                     format = { "{message}" },
                     replace = true,
                     close = {

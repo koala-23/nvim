@@ -11,10 +11,12 @@ return {
         require("nvim-treesitter.configs").setup({
             ensure_installed = {
                 "css",
+                "scss",
                 "html",
                 "javascript",
                 "json",
                 "lua",
+                "luadoc",
                 "php",
                 "sql",
                 "typescript",
@@ -22,7 +24,7 @@ return {
                 "yaml",
                 "xml",
                 "markdown",
-                "vimdoc",
+                "vim",
             },
             autotag = {
                 enable = true,

@@ -34,6 +34,7 @@ return {
                 "tsserver",
                 "html",
                 "cssls",
+                "yamlls",
                 "tailwindcss",
                 "lua_ls",
                 "emmet_ls",
@@ -55,6 +56,7 @@ return {
                 "stylua",   -- lua formatter
                 "eslint_d", -- ts/js linter
                 "pint",
+                "php-debug-adapter"
             },
             -- auto-install configured servers (with lspconfig)
             automatic_installation = true,

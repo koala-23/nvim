@@ -12,7 +12,7 @@ map("n", "<A-s>", ":new +set\\ buftype=nofile<CR>", { noremap = true, silent = t
 map("n", "<C-t>", ":tabnew<CR>", { noremap = true, silent = true, desc = "tabnew" })
 map("n", "<C-h>", "<C-w>h", { noremap = true, silent = true, desc = "Change window left" })
 map("n", "<C-j>", "<C-w>j", { noremap = true, silent = true, desc = "Change window down" })
-map("n", "<C-k>", "<C-w>k", { noremap = true, silent = true, desc = "Change window up" })
+map({"n", "t"}, "<C-k>", "<C-w>k", { noremap = true, silent = true, desc = "Change window up" })
 map("n", "<C-l>", "<C-w>l", { noremap = true, silent = true, desc = "Change window right" })
 map("n", "<C-w>h", "<C-w>H", { noremap = true, silent = true, desc = "split move left" })
 map("n", "<C-w>j", "<C-w>J", { noremap = true, silent = true, desc = "split move down" })

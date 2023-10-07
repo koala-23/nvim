@@ -75,6 +75,7 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'nvim_lua' },
                 { name = 'luasnip' },
+                { name = "codeium" },
                 { name = 'buffer',  keyword_length = 5 },
             }),
             formatting = {
@@ -95,7 +96,7 @@ return {
             },
             window = {
                 completion = {
-                    border =  "rounded",
+                    border = "rounded",
                     winhighlight = "Normal:CmpNormal,CursorLine:MyCursorLine",
                 },
                 documentation = {

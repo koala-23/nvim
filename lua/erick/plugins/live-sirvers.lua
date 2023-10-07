@@ -3,7 +3,7 @@ return {
     run = function()
         require("live_server.util").install()
     end,
-    cmd = { "LiveServer", "LiveServerStart", "LiveServerStop", },
+    cmd = { "LiveServerStart", "LiveServerStop", },
     config = function()
         local status_ok, live_server = pcall(require, "live_server")
         if not status_ok then

@@ -186,5 +186,6 @@ return {
         },
         { "<leader>fk", "<cmd>Telescope keymaps<cr>",   desc = "Keymaps",   opts },
         { "<leader>fa", "<cmd>Telescope help_tags<cr>", desc = "Help tags", opts },
+        { "<leader>ft", "<cmd>TodoTelescope<cr>",       desc = "ToDo" },
     },
 }

@@ -12,7 +12,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "erick.plugins" }, { import = "erick.plugins.lsp" } }, {
+require("lazy").setup({ { import = "erick.plugins"}, {import ="erick.plugins.lsp" }}, {
     default = {
         lazy = true
     },

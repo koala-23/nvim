@@ -13,7 +13,7 @@ return {
             sections = {
                 lualine_a = { { "mode", upper = true } },
                 lualine_b = { { "branch", icon = "" }, "db_ui#statusline" },
-                lualine_c = { { "filename", file_status = false, path = 1 } },
+                lualine_c = { { "filename", file_status = false, path = 2 } },
                 lualine_x = {
                     "diagnostics",
                     "diff",
