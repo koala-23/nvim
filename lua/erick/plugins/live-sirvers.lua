@@ -12,10 +12,13 @@ return {
 
         live_server.setup({
             port = 8090,
-            browser_command = "firefox", -- Empty string starts up with default browser
+            browser_command = "microsoft-edge-stable", -- Empty string starts up with default browser
             quiet = false,
             no_css_inject = false, -- Disables css injection if true, might be useful when testing out tailwindcss
             install_path = vim.fn.stdpath "config" .. "/lua/erick/live-server/",
         })
-    end
+    end,
+    keys = {
+        {"<leader>L","<cmd>LiveServerStart<cr>", desc = "Start Live Server"},
+    }
 }

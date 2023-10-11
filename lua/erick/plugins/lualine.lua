@@ -1,3 +1,13 @@
+local function lsp_client()
+    local clients = vim.lsp.get_clients()
+    local client_names = {}
+    for _, client in ipairs(clients) do
+        table.insert(client_names, "  " .. client.name)
+    end
+
+    return #client_names > 0 and table.concat(client_names, " ") or 'No Active LSP'
+end
+
 return {
     "nvim-lualine/lualine.nvim",
     dependencie = { "nvim-tree/nvim-web-devicons" },
@@ -13,7 +23,7 @@ return {
             sections = {
                 lualine_a = { { "mode", upper = true } },
                 lualine_b = { { "branch", icon = "" }, "db_ui#statusline" },
-                lualine_c = { { "filename", file_status = false, path = 2 } },
+                lualine_c = { { "filename", file_status = false, path = 1 } },
                 lualine_x = {
                     "diagnostics",
                     "diff",
@@ -23,7 +33,7 @@ return {
                         color = { fg = "#ff9e64" },
                     },
                 },
-                lualine_y = { "filetype", "progress" },
+                lualine_y = { "filetype",lsp_client, "progress" },
                 lualine_z = { "location" },
             },
             winbar = {

@@ -22,13 +22,13 @@ return {
                 --  "formatting.prettier.with({disabled_filetypes: {}})" (see null-ls docs)
                 formatting.stylua.with({ extra_args = { "--indent_type", "Spaces", "indent_width", "4" } }),
                 formatting.prettier.with({ extra_args = { "~/.prettierrc.json" } }),
-                formatting.pint,
-                -- formatting.phpcbf.with({ extra_args = { "--standard=PSR12" } }),
-                formatting.blade_formatter,
+                -- formatting.pint,
+                formatting.phpcbf.with({ extra_args = { "--standard=PSR12" } }),
+                -- formatting.blade_formatter,
 
                 -- DIAGNOSTICS
-                diagnostics.phpstan,
-                -- diagnostics.phpcs.with({ extra_args = { "--standard=~/php/phpcs/phpcs.xml" } }),
+                -- diagnostics.phpstan,
+                diagnostics.phpcs.with({ extra_args = { "--standard=~/php/phpcs/phpcs.xml" } }),
                 diagnostics.stylelint.with({ extra_args = { config_file = "~/.stylelintrc.json" } }),
                 diagnostics.eslint_d.with({
                     condition = function(utils)

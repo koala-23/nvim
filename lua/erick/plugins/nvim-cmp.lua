@@ -15,7 +15,7 @@ return {
         "hrsh7th/cmp-cmdline",
         "hrsh7th/cmp-git",
         "saadparwaiz1/cmp_luasnip",
-        "rafamadriz/friendly-snippets",
+        -- "rafamadriz/friendly-snippets",
         "onsails/lspkind-nvim",
         { "L3MON4D3/LuaSnip", version = "v2.*" },
     },
