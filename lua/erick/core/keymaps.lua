@@ -28,6 +28,7 @@ map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
 -- borrar una palabra
 map('n', 'dw', 'vb"_d', { noremap = true, silent = true })
+-- para la busqueda
 map("n", "n", "nzzzv", {})
 map("n", "N", "Nzzzv", {})
 
