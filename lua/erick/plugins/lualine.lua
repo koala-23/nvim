@@ -33,7 +33,7 @@ return {
                         color = { fg = "#ff9e64" },
                     },
                 },
-                lualine_y = { "filetype",lsp_client, "progress" },
+                lualine_y = { "filetype", lsp_client, "progress" },
                 lualine_z = { "location" },
             },
             winbar = {

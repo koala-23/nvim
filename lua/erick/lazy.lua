@@ -1,3 +1,4 @@
+---@diagnostic disable: undefined-field
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -12,7 +13,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({ { import = "erick.plugins"}, {import ="erick.plugins.lsp" }}, {
+require("lazy").setup({ { import = "erick.plugins" }, { import = "erick.plugins.lsp" } }, {
     default = {
         lazy = true
     },
@@ -29,7 +30,7 @@ require("lazy").setup({ { import = "erick.plugins"}, {import ="erick.plugins.lsp
             disabled_plugins = {
                 "gzip",
                 "matchit",
-                "matchparen",
+                -- "matchparen",
                 -- "netrwPlugin",
                 "tarPlugin",
                 "tohtml",

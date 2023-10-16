@@ -1,14 +1,19 @@
 vim.g.mapleader = " "
 vim.g.snnipet = "luasnip"
+
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_silent = 1
+vim.g.netrw_fastbrowse = 0
+
 local opt = vim.opt
 
 opt.guicursor = "i:ver30,v:hor30"
 opt.mouse = ""
-opt.cursorline = true
+opt.cursorline = false
 opt.number = true
 opt.relativenumber = true
 opt.conceallevel = 3 -- nivel de ocultamiento de caracteres en las lineas
-opt.hidden = true    -- oculta los buffers en lugar de cerrarlos
 opt.expandtab = true
 opt.tabstop = 4
 opt.softtabstop = 4
@@ -39,14 +44,10 @@ opt.signcolumn = "yes"
 opt.colorcolumn = "120"
 opt.equalalways = false
 opt.shortmess:append "I"
-opt.history = 0
+opt.history = 1000
 opt.backup = false      -- desactica el backup de archivos
 opt.writebackup = false -- desactica el backup de archivos modificados desde nvim
-opt.pumheight = 20      -- Maximo numero de entradas en un popup
-opt.pumblend = 0        -- Para transparencia de popup
-vim.o.langmenu = "es_ES.utf8"
-vim.o.helplang = "es"
-
+opt.pumheight = 15      -- Maximo numero de entradas en un popup
 -- Highlight bracket pairs
-vim.opt.showmatch = true
-vim.opt.matchtime = 10
+opt.showmatch = true
+opt.matchtime = 10

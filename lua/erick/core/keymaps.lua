@@ -20,7 +20,7 @@ map("n", "<C-w>k", "<C-w>K", { noremap = true, silent = true, desc = "split move
 map("n", "<C-w>l", "<C-w>L", { noremap = true, silent = true, desc = "split move right" })
 
 -- indentar codigo
-map({ "n", "v" }, "<A-F>", "=", { noremap = true, silent = true, desc = "Indent code without plugin" })
+map({ "n", "v" }, "<A-F>", "=G", { noremap = true, silent = true, desc = "Indent code without plugin" })
 
 -- mover las lineas selecionadas arriba/abajo
 map("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
@@ -34,13 +34,12 @@ map("n", "N", "Nzzzv", {})
 
 map("n", "<esc>", ":noh<return><esc>", { silent = true })
 map({ "n", "v", "i", "s" }, "<C-c>", "<esc>", {})
-map({ "n", "v" }, "q", "<nop>", {})
 map({ "n", "v" }, "space", "<nop>", {})
-map("n", "<leader>e", "<cmd>Texplore<cr>", { desc = "Explorer" })
+map("n", "<leader>e", "<cmd>Lexplore 17<cr>", { desc = "Explorer" })
 
--- borrado especial 
+-- borrado especial
 map("v", "d", '"_d', { noremap = true, silent = true })
 map("n", "dd", '"_dd', { noremap = true, silent = true })
 
--- quitar autocomentado en la siguiente linea
-vim.cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
+--select all 
+map("n","<C-a>", "gg<S-v>G", {noremap = true, silent = true, desc = "Select all"})
