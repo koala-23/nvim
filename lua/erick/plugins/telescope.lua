@@ -124,6 +124,7 @@ return {
    keys = {
       { "<leader>ff", "<cmd>Telescope find_files<cr>",  desc = "Find files",  opts },
       { "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Grep string", opts },
+      { "<leader>gs", "<cmd>Telescope git_status<cr>",  desc = "Git Status",  opts, },
       { "<leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Git commits", opts },
       { "<leader>fw", "<cmd>Telescope live_grep<cr>",   desc = "Live grep",   opts },
       {
@@ -150,7 +151,7 @@ return {
          "<leader>fp",
          function()
             return require("telescope").extensions.file_browser.file_browser({
-               cwd = "~/.config/nvim-2/lua/erick/plugins",
+               cwd = "~/.config/nvim-2/lua/erick",
                prompt_title = " Neovim Config ",
             })
          end,
@@ -169,21 +170,10 @@ return {
          desc = "File browser relative",
          opts,
       },
-      {
-         "<leader>db",
-         function()
-            return require("telescope").extensions.file_browser.file_browser({
-               cwd = "~/codigo/databases",
-               prompt_title = " Databases SQLite ",
-            })
-         end,
-         desc = "DB SQLite",
-         opts
-      },
       { "<leader>fk", "<cmd>Telescope keymaps<cr>",                         desc = "Keymaps",     opts },
       { "<leader>fa", "<cmd>Telescope help_tags<cr>",                       desc = "Help tags",   opts },
       { "<leader>ft", "<cmd>TodoTelescope<cr>",                             desc = "ToDo",        opts },
-      { "<leader>gs", "<cmd>Telescope git_status<cr>",                      desc = "Git Status",  opts, },
-      { "<leader>th", "<cmd>Telescope colorscheme enable_preview=true<cr>", desc = "Colorscheme", opts, }
+      { "<leader>th", "<cmd>Telescope colorscheme enable_preview=true<cr>", desc = "Colorscheme", opts, },
+      { "<leader>fd", "<cmd>Telescope diagnostics<cr>",                    desc = "Diagnostics", opts },
    },
 }

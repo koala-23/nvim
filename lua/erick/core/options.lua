@@ -1,16 +1,21 @@
 vim.g.mapleader = " "
 vim.g.snnipet = "luasnip"
 
-vim.g.netrw_browse_split = 0
-vim.g.netrw_banner = 0
-vim.g.netrw_silent = 1
-vim.g.netrw_fastbrowse = 0
+-- vim.g.netrw_browse_split = 0
+-- vim.g.netrw_silent = 1
+-- vim.g.netrw_fastbrowse = 0
+
+
+vim.g.netrw_banner = 0					-- gets rid of the annoying banner for netrw
+vim.g.netrw_browse_split=4				-- open in prior window
+vim.g.netrw_altv = 1					-- change from left splitting to right splitting
+vim.g.netrw_liststyle=3					-- tree style view in netrw
 
 local opt = vim.opt
 
 opt.guicursor = "i:ver30,v:hor30"
 opt.mouse = ""
-opt.cursorline = false
+opt.cursorline = true
 opt.number = true
 opt.relativenumber = true
 opt.conceallevel = 3 -- nivel de ocultamiento de caracteres en las lineas
@@ -38,7 +43,7 @@ opt.splitright = true
 opt.autowrite = true
 opt.list = false
 opt.laststatus = 3
-opt.cmdheight = 1
+opt.cmdheight = 0
 opt.updatetime = 400
 opt.signcolumn = "yes"
 opt.colorcolumn = "120"

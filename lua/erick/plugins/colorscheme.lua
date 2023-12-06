@@ -11,7 +11,7 @@ return {
             disable_background = true,
             disable_float_background = true,
          })
-         vim.cmd.colorscheme("rose-pine")
+         -- vim.cmd.colorscheme("rose-pine")
       end
    },
    {
@@ -26,7 +26,7 @@ return {
                light = "latte",
                dark = "mocha",
             },
-            trnasparent_background = true,
+            transparent_background = true,
             styles = { comments = { "italic" } },
             integrations = { notify = true },
          })
@@ -53,7 +53,7 @@ return {
             --     }
             -- end,
          })
-         -- vim.cmd.colorscheme("tokyonight")
+         vim.cmd.colorscheme("tokyonight")
       end
    },
-   }
+}

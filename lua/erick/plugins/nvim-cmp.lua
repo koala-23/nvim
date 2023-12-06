@@ -84,7 +84,7 @@ return {
                   path = "[PATH]",
                   nvim_lsp = "[LSP]",
                   nvim_lua = "[API]",
-                  buffer = "[BUFFER]",
+                  buffer = "[BUF]",
                   luasnip = "[SNIP]",
                   codeium = '["]',
                   ["vim-dadbod-completion"] = "[󰪩]",

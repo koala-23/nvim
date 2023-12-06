@@ -11,7 +11,7 @@ return {
 
       local lspconfig = require("lspconfig")
 
-      local lsp_flags = {debounce_text_changes = 150}
+      local lsp_flags = { debounce_text_changes = 150 }
 
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -51,9 +51,9 @@ return {
 
          vim.bo.omnifunc = "v:lua.vim.lsp.omnifunc"
 
-         if client.server_capabilities.inlayHintProvider then
-            vim.lsp.inlay_hint(bufnr, true)
-         end
+         -- if client.server_capabilities.inlayHintProvider then
+         --    vim.lsp.inlay_hint(bufnr, true)
+         -- end
       end
 
       vim.diagnostic.config { virtual_text = true }
@@ -69,7 +69,7 @@ return {
          capabilities = capabilities,
          flags = lsp_flags,
          on_attach = on_attach,
-         filetypes = { "html", "typescript", "javascript", "php", "blade" },
+         filetypes = { "html", "css", "sass", "scss", "javascript" },
       })
 
       lspconfig["lua_ls"].setup({
@@ -119,22 +119,11 @@ return {
          },
       })
 
-      -- lspconfig["tailwindcss"].setup({
-      --     on_attach = on_attach,
-      --     capabilities = capabilities,
-      --     filetypes = { "html", "css", "scss", "sass" },
-      -- })
-
       local servers = {
          "html",
-         "vimls",
          "cssls",
-         "gopls",
-         "yamlls",
-         "jsonls",
-         "lemminx",
          "tsserver",
-         "marksman",
+         "vimls",
       }
       for _, server in pairs(servers) do
          lspconfig[server].setup({
@@ -143,5 +132,24 @@ return {
             on_attach = on_attach,
          })
       end
-   end,
+
+      local server_inactivos = {
+         "gopls",
+         "bashls",
+         "yamlls",
+         "jsonls",
+         "marksman",
+         "lemminx",
+         "tailwindcss",
+         "volar"
+      }
+      for _, server in pairs(server_inactivos) do
+         lspconfig[server].setup({
+            capabilities = capabilities,
+            flags = lsp_flags,
+            on_attach = on_attach,
+            autostart = false,
+         })
+      end
+   end
 }

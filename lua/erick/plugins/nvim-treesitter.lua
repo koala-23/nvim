@@ -1,7 +1,7 @@
 return {
    "nvim-treesitter/nvim-treesitter",
    build = ":TSUpdate",
-   event = { "BufReadPre", "BufNewFile" },
+   event = { "VeryLazy" },
    dependencies = {
       'JoosepAlviste/nvim-ts-context-commentstring',
       "nvim-treesitter/nvim-treesitter-textobjects",
@@ -23,10 +23,12 @@ return {
          "php",
          "scss",
          "sql",
+         "bash",
          "typescript",
          "vim",
          "xml",
          "yaml",
+         "vue",
       },
       autotag = {
          enable = true,
@@ -67,8 +69,8 @@ return {
             },
          },
       },
-      -- context_commentstring = {
-      --    enable_autocmd = true,
-      -- },
+      context_commentstring = {
+         enable_autocmd = false,
+      },
    }
 }

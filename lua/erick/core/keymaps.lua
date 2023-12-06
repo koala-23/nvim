@@ -19,6 +19,12 @@ map("n", "<C-w>j", "<C-w>J", { noremap = true, silent = true, desc = "split move
 map("n", "<C-w>k", "<C-w>K", { noremap = true, silent = true, desc = "split move up" })
 map("n", "<C-w>l", "<C-w>L", { noremap = true, silent = true, desc = "split move right" })
 
+-- resize
+-- map("n", "<C-Left>", ":vertical resize +10<CR>", { noremap = true, silent = true })
+-- map("n", "<C-Right>", ":vertical resize -10<CR>", { noremap = true, silent = true })
+-- map("n", "<C-Up>", ":horizontal resize +10<CR>", { noremap = true, silent = true })
+-- map("n", "<C-Down>", ":horizontal resize -10<CR>", { noremap = true, silent = true })
+
 -- indentar codigo
 map({ "n", "v" }, "<A-F>", "=G", { noremap = true, silent = true, desc = "Indent code without plugin" })
 
@@ -28,12 +34,14 @@ map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
 -- borrar una palabra
 map('n', 'dw', 'vb"_d', { noremap = true, silent = true })
+
 -- para la busqueda
 map("n", "n", "nzzzv", {})
 map("n", "N", "Nzzzv", {})
 
 map("n", "<esc>", ":noh<return><esc>", { silent = true })
 map({ "n", "v", "i", "s" }, "<C-c>", "<esc>", {})
+map("n", "<C-s>", ":w<CR>", {})
 map({ "n", "v" }, "space", "<nop>", {})
 map("n", "<leader>e", "<cmd>Lexplore 17<cr>", { desc = "Explorer" })
 
@@ -43,3 +51,15 @@ map("n", "dd", '"_dd', { noremap = true, silent = true })
 
 --select all 
 map("n","<C-a>", "gg<S-v>G", {noremap = true, silent = true, desc = "Select all"})
+
+--desplazamiento suave 
+map("n", "<C-u>", "5k", { noremap = true, silent = true })
+map("n", "<C-d>", "5j", { noremap = true, silent = true })
+
+-- indentar codigo
+map("v", "<", "<gv", { noremap = true, silent = true })
+map("v", ">", ">gv", { noremap = true, silent = true })
+
+--probando
+map("n","k","gk",{ noremap = true, silent = true })
+map("n","j","gj",{ noremap = true, silent = true })

@@ -12,7 +12,7 @@ return {
 
         live_server.setup({
             port = 8090,
-            browser_command = "firefox",
+            browser_command = "brave",
             quiet = false,
             no_css_inject = false, -- Disables css injection if true, might be useful when testing out tailwindcss
             install_path = vim.fn.stdpath "config" .. "/lua/erick/live-server/",
