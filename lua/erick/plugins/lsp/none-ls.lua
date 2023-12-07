@@ -17,7 +17,8 @@ return {
          root_dir = null_ls_utils.root_pattern(".null-ls-root", "Makefile", ".git", "package.json", ".eslintrc"),
          sources = {
             null_ls.builtins.code_actions.refactoring,
-            formatting.stylua.with({ extra_args = { "--indent_type", "Spaces", "indent_width", "4" } }),
+            -- FORMATT
+            -- formating.stylua.with({ extra_args = { "--indent_type", "Tabs", "indent_width", "4" } }),
             formatting.prettier.with({ extra_args = { config_file = "~/.prettierrc.json" } }),
             formatting.phpcbf.with({ extra_args = { "--standard=PSR12" } }),
 
@@ -30,6 +31,7 @@ return {
                end,
             }),
          },
+
          -- configure format on save
          on_attach = function(current_client, bufnr)
             if current_client.supports_method("textDocument/formatting") then

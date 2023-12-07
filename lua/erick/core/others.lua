@@ -20,29 +20,11 @@ vim.api.nvim_create_autocmd("InsertLeave", {
    command = "set nopaste"
 })
 
-local lsp_servers = {
-         "bashls",
-         "gopls",
-         "jsonls",
-         "lemminx",
-         "marksman",
-         "tailwindcss",
-         "volar",
-         "yamlls",
-}
+vim.diagnostic.config { virtual_text = true }
 
-function select_lsp()
-   vim.ui.select(lsp_servers, {
-      prompt = 'Selecciona un LSP para activar',
-   }, function(_, lsp)
-      activarLSP(lsp)
-   end)
+-- Change the Diagnostic symbols in the sign column (gutter)
+local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+for type, icon in pairs(signs) do
+   local hl = "DiagnosticSign" .. type
+   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
-
-function activarLSP(lsp)
-   if lsp == "bashls" or lsp=="gopls" or lsp=="jsonls" or lsp=="lemminx" or lsp=="marksman" or lsp=="tailwindcss" or lsp=="volar" or lsp=="yamlls" then
-      vim.cmd("LspStart" .. lsp)
-   end
-end
-
-vim.api.nvim_set_keymap('n', '<leader>l', '<cmd>lua select_lsp()<CR>', { noremap = true, silent = true })

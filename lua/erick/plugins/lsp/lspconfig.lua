@@ -56,20 +56,11 @@ return {
          -- end
       end
 
-      vim.diagnostic.config { virtual_text = true }
-
-      -- Change the Diagnostic symbols in the sign column (gutter)
-      local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-      for type, icon in pairs(signs) do
-         local hl = "DiagnosticSign" .. type
-         vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-      end
-
       lspconfig["emmet_ls"].setup({
          capabilities = capabilities,
          flags = lsp_flags,
          on_attach = on_attach,
-         filetypes = { "html", "css", "sass", "scss", "javascript" },
+         filetypes = { "html", "css", "sass", "scss", "javascript", "vue" },
       })
 
       lspconfig["lua_ls"].setup({
@@ -124,6 +115,7 @@ return {
          "cssls",
          "tsserver",
          "vimls",
+         "volar",
       }
       for _, server in pairs(servers) do
          lspconfig[server].setup({
@@ -135,14 +127,13 @@ return {
 
       local server_inactivos = {
          "gopls",
-         "bashls",
          "yamlls",
          "jsonls",
          "marksman",
          "lemminx",
          "tailwindcss",
-         "volar"
       }
+
       for _, server in pairs(server_inactivos) do
          lspconfig[server].setup({
             capabilities = capabilities,

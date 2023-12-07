@@ -1,7 +1,7 @@
 return {
    "nvim-treesitter/nvim-treesitter",
    build = ":TSUpdate",
-   event = { "VeryLazy" },
+   event = { "BufReadPost", "BufNewFile" },
    dependencies = {
       'JoosepAlviste/nvim-ts-context-commentstring',
       "nvim-treesitter/nvim-treesitter-textobjects",
@@ -15,6 +15,7 @@ return {
          "html",
          "http",
          "javascript",
+         "java";
          "json",
          "lua",
          "luadoc",
@@ -35,7 +36,7 @@ return {
          enable_rename = true,
          enable_close = true,
          enable_close_on_slash = true,
-         filetypes = { "html", "xml", "javascript", "typescript", "php", "blade" },
+         filetypes = { "html", "xml", "javascript", "typescript", "php", "blade", "vue" },
       },
       highlight = {
          enable = true,

@@ -27,7 +27,10 @@ return {
                dark = "mocha",
             },
             transparent_background = true,
-            styles = { comments = { "italic" } },
+            styles = {
+               comments = { "italic" },
+               keywords = { "italic" }
+            },
             integrations = { notify = true },
          })
          -- vim.cmd.colorscheme "catppuccin"
@@ -40,10 +43,11 @@ return {
       config = function()
          ---@diagnostic disable-next-line: missing-fields
          require("tokyonight").setup({
+            transparent = true,
             style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
             styles = {
                comments = { italic = true },
-               keywords = { italic = false },
+               keywords = { italic = true },
                floats = "transparent",
             }
             -- -- cambiar el color de los numero de linea

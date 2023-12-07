@@ -1,16 +1,15 @@
 vim.g.mapleader = " "
 vim.g.snnipet = "luasnip"
 
--- vim.g.netrw_browse_split = 0
 -- vim.g.netrw_silent = 1
 -- vim.g.netrw_fastbrowse = 0
 
+vim.g.netrw_banner = 0     -- gets rid of the annoying banner for netrw
+vim.g.netrw_browse_split = 4 -- open in prior window
+vim.g.netrw_altv = 1       -- change from left splitting to right splitting
+vim.g.netrw_liststyle = 3  -- tree style view in netrw
 
-vim.g.netrw_banner = 0					-- gets rid of the annoying banner for netrw
-vim.g.netrw_browse_split=4				-- open in prior window
-vim.g.netrw_altv = 1					-- change from left splitting to right splitting
-vim.g.netrw_liststyle=3					-- tree style view in netrw
-
+vim.g.codeium_disable_bindings = 1
 local opt = vim.opt
 
 opt.guicursor = "i:ver30,v:hor30"
@@ -29,20 +28,20 @@ opt.wrap = false -- wrap para la lineas
 opt.swapfile = false
 opt.undofile = true
 opt.undodir = os.getenv "~/.cache/nvim/undodir" -- ubicacion de los archivos de deshacer
-opt.hlsearch = false                            -- desactica el resatado en la busqueda
+opt.hlsearch = true                             -- resatado en la busqueda
 opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.termguicolors = true
-opt.scrolloff = 8
-opt.sidescrolloff = 8
+opt.scrolloff = 4
+opt.sidescrolloff = 4
 opt.showmode = false
 opt.clipboard = "unnamedplus"
 opt.splitbelow = true
 opt.splitright = true
 opt.autowrite = true
 opt.list = false
-opt.laststatus = 3
+opt.laststatus = 2
 opt.cmdheight = 0
 opt.updatetime = 400
 opt.signcolumn = "yes"
@@ -55,4 +54,3 @@ opt.writebackup = false -- desactica el backup de archivos modificados desde nvi
 opt.pumheight = 15      -- Maximo numero de entradas en un popup
 -- Highlight bracket pairs
 opt.showmatch = true
-opt.matchtime = 10

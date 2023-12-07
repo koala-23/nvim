@@ -1,8 +1,6 @@
 vim.g.mapleader = " "
 local map = vim.keymap.set
 
-map("n", "gf", "gf", { noremap = true, silent = true, desc = "Go to file" })
-
 -- Splits
 map("n", "<C-q>", ":bd<CR>", { noremap = true, silent = true, desc = "Splits quit" })
 map("n", "<A-v>", ":vnew +set\\ buftype=nofile<CR>", { noremap = true, silent = true, desc = "Splits vertical" })
@@ -18,12 +16,6 @@ map("n", "<C-w>h", "<C-w>H", { noremap = true, silent = true, desc = "split move
 map("n", "<C-w>j", "<C-w>J", { noremap = true, silent = true, desc = "split move down" })
 map("n", "<C-w>k", "<C-w>K", { noremap = true, silent = true, desc = "split move up" })
 map("n", "<C-w>l", "<C-w>L", { noremap = true, silent = true, desc = "split move right" })
-
--- resize
--- map("n", "<C-Left>", ":vertical resize +10<CR>", { noremap = true, silent = true })
--- map("n", "<C-Right>", ":vertical resize -10<CR>", { noremap = true, silent = true })
--- map("n", "<C-Up>", ":horizontal resize +10<CR>", { noremap = true, silent = true })
--- map("n", "<C-Down>", ":horizontal resize -10<CR>", { noremap = true, silent = true })
 
 -- indentar codigo
 map({ "n", "v" }, "<A-F>", "=G", { noremap = true, silent = true, desc = "Indent code without plugin" })
@@ -56,10 +48,6 @@ map("n","<C-a>", "gg<S-v>G", {noremap = true, silent = true, desc = "Select all"
 map("n", "<C-u>", "5k", { noremap = true, silent = true })
 map("n", "<C-d>", "5j", { noremap = true, silent = true })
 
--- indentar codigo
+-- agregar indentación al codigo
 map("v", "<", "<gv", { noremap = true, silent = true })
 map("v", ">", ">gv", { noremap = true, silent = true })
-
---probando
-map("n","k","gk",{ noremap = true, silent = true })
-map("n","j","gj",{ noremap = true, silent = true })
