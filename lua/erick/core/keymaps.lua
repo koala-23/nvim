@@ -33,20 +33,16 @@ map("n", "N", "Nzzzv", {})
 
 map("n", "<esc>", ":noh<return><esc>", { silent = true })
 map({ "n", "v", "i", "s" }, "<C-c>", "<esc>", {})
-map("n", "<C-s>", ":w<CR>", {})
 map({ "n", "v" }, "space", "<nop>", {})
-map("n", "<leader>e", "<cmd>Lexplore 17<cr>", { desc = "Explorer" })
+map("n", "<leader>e", "<cmd>Lexplore<cr>", { desc = "Explorer" })
 
 -- borrado especial
 map("v", "d", '"_d', { noremap = true, silent = true })
 map("n", "dd", '"_dd', { noremap = true, silent = true })
 
---select all 
-map("n","<C-a>", "gg<S-v>G", {noremap = true, silent = true, desc = "Select all"})
-
 --desplazamiento suave 
-map("n", "<C-u>", "5k", { noremap = true, silent = true })
-map("n", "<C-d>", "5j", { noremap = true, silent = true })
+map("n", "<C-u>", "6k", { noremap = true, silent = true })
+map("n", "<C-d>", "6j", { noremap = true, silent = true })
 
 -- agregar indentación al codigo
 map("v", "<", "<gv", { noremap = true, silent = true })

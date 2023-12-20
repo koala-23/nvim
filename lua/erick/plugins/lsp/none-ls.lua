@@ -18,7 +18,6 @@ return {
          sources = {
             null_ls.builtins.code_actions.refactoring,
             -- FORMATT
-            -- formating.stylua.with({ extra_args = { "--indent_type", "Tabs", "indent_width", "4" } }),
             formatting.prettier.with({ extra_args = { config_file = "~/.prettierrc.json" } }),
             formatting.phpcbf.with({ extra_args = { "--standard=PSR12" } }),
 

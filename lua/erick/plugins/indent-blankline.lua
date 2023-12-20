@@ -5,6 +5,7 @@ return {
    opts = {
       scope = {
          enabled = false
-      }
+      },
+      indent = { char = "|" },
    },
 }

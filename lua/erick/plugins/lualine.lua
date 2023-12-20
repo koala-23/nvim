@@ -30,7 +30,13 @@ return {
                "diff",
             },
             lualine_y = { "filetype", lsp_client, "progress" },
-            lualine_z = { "location" },
+            lualine_z = { "location",
+               {
+                  'datetime',
+                  -- options: default, us, uk, iso, or your own format string ("%H:%M", etc..)
+                  style = ' %H:%M'
+               }
+            },
          },
          winbar = {
             lualine_a = {},

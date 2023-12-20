@@ -110,12 +110,23 @@ return {
          },
       })
 
+      lspconfig["volar"].setup({
+         capabilities = capabilities,
+         flags = lsp_flags,
+         on_attach = on_attach,
+         init_options = {
+            typescript = {
+               tsdk ="/home/usuario/.local/share/nvim-2/mason/packages/vue-language-server/node_modules/typescript/lib",
+            }
+         }
+      })
+
+
       local servers = {
          "html",
          "cssls",
          "tsserver",
          "vimls",
-         "volar",
       }
       for _, server in pairs(servers) do
          lspconfig[server].setup({

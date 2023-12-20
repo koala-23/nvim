@@ -5,8 +5,8 @@ return {
    dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-lua/popup.nvim",
-      "nvim-telescope/telescope-fzy-native.nvim",
       "nvim-tree/nvim-web-devicons",
+      "nvim-telescope/telescope-fzy-native.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
       {
@@ -61,6 +61,7 @@ return {
             mappings = {
                n = {
                   ["<C-c>"] = "close",
+                  ["<C-h>"] = "which_key",
                },
                i = {
                   ["<C-h>"] = "which_key",
@@ -117,12 +118,13 @@ return {
                   width = 0.8,
                   previewer = false,
                }),
-            },
-         },
+            }
+         }
       })
    end,
    keys = {
       { "<leader>ff", "<cmd>Telescope find_files<cr>",  desc = "Find files",  opts },
+      { "<leader>fz", "<cmd>FZF<cr>",         desc = "FZF",         opts },
       { "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Grep string", opts },
       { "<leader>gs", "<cmd>Telescope git_status<cr>",  desc = "Git Status",  opts, },
       { "<leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Git commits", opts },
@@ -174,6 +176,6 @@ return {
       { "<leader>fa", "<cmd>Telescope help_tags<cr>",                       desc = "Help tags",   opts },
       { "<leader>ft", "<cmd>TodoTelescope<cr>",                             desc = "ToDo",        opts },
       { "<leader>th", "<cmd>Telescope colorscheme enable_preview=true<cr>", desc = "Colorscheme", opts, },
-      { "<leader>fd", "<cmd>Telescope diagnostics<cr>",                    desc = "Diagnostics", opts },
+      { "<leader>fd", "<cmd>Telescope diagnostics<cr>",                     desc = "Diagnostics", opts },
    },
 }

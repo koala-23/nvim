@@ -20,7 +20,6 @@ return {
          "lua",
          "luadoc",
          "markdown",
-         "norg",
          "php",
          "scss",
          "sql",
