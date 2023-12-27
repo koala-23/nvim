@@ -7,6 +7,6 @@ return {
       }
    },
    keys = {
-      {"<leader>o", "<cmd>Oil<cr>"}
+      {"<leader>o", "<cmd>Oil --float<cr>"}
    }
 }

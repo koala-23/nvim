@@ -6,7 +6,7 @@ if not vim.loop.fs_stat(lazypath) then
       "clone",
       "--filter=blob:none",
       "https://github.com/folke/lazy.nvim.git",
-      "--branch=stable",   -- latest stable release
+      "--branch=stable", -- latest stable release
       lazypath,
    })
 end
@@ -21,6 +21,7 @@ require("lazy").setup({ { import = "erick.plugins" }, { import = "erick.plugins.
    checker = {
       enabled = true,
       notify = false,
+      frequency = 43200,
    },
    change_detection = {
       notify = false,
@@ -29,9 +30,6 @@ require("lazy").setup({ { import = "erick.plugins" }, { import = "erick.plugins.
       rtp = {
          disabled_plugins = {
             "gzip",
-            "matchit",
-            -- "matchparen",
-            -- "netrwPlugin",
             "tarPlugin",
             "tohtml",
             "tutor",
