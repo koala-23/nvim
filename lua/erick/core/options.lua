@@ -4,14 +4,15 @@ vim.g.snnipet = "luasnip"
 vim.g.netrw_banner = 0
 vim.g.netrw_browse_split = 4 -- open in prior window
 vim.g.netrw_altv = 1         -- change from left splitting to right splitting
-vim.g.netrw_liststyle = 3    -- tree style view in netrw
 vim.g.netrw_fastbrowse = 0
-vim.g.netrw_winsize = 17
+vim.g.netrw_winsize = 18
+vim.g.netrw_list_hide = "^\\..*"
+vim.g.netrw_hide = 1
 
 vim.g.codeium_disable_bindings = 1
 local opt = vim.opt
 
-opt.guicursor = "i:ver30,v:hor30"
+opt.guicursor = "i:ver25,v:hor25"
 opt.mouse = ""
 opt.cursorline = true
 opt.number = true
@@ -27,7 +28,7 @@ opt.wrap = false -- wrap para la lineas
 opt.swapfile = false
 opt.undofile = true
 opt.undodir = os.getenv "~/.cache/nvim/undodir" -- ubicacion de los archivos de deshacer
-opt.hlsearch = true                             -- resatado en la busqueda
+opt.hlsearch = false                             -- resatado en la busqueda
 opt.incsearch = true
 opt.ignorecase = true
 opt.smartcase = true
@@ -51,5 +52,7 @@ opt.history = 1000
 opt.backup = false      -- desactica el backup de archivos
 opt.writebackup = false -- desactica el backup de archivos modificados desde nvim
 opt.pumheight = 15      -- Maximo numero de entradas en un popup
+opt.pumblend = 15
+opt.completeopt = "menuone,noselect"
 -- Highlight bracket pairs
 opt.showmatch = true

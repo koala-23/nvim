@@ -18,8 +18,7 @@ map("n", "<C-w>k", "<C-w>K", { noremap = true, silent = true, desc = "split move
 map("n", "<C-w>l", "<C-w>L", { noremap = true, silent = true, desc = "split move right" })
 
 -- indentar codigo
-map({ "n", "v" }, "<A-F>", "=G", { noremap = true, silent = true, desc = "Indent code without plugin" })
-
+map({ "n", "v" }, '<A-F>', 'mm=G`m', { noremap = true, silent = true, desc = "Indent code without plugin" })
 -- mover las lineas selecionadas arriba/abajo
 map("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
@@ -32,18 +31,29 @@ map("n", "n", "nzzzv", {})
 map("n", "N", "Nzzzv", {})
 
 map("n", "<esc>", ":noh<return><esc>", { silent = true })
-map({ "n", "v", "i", "s" }, "<C-c>", "<esc>", {})
-map({ "n", "v" }, "space", "<nop>", {})
+map("i", "<C-c>", "<esc>", {})
+map("n", "space", "<nop>", {})
+map("n", "Q", "<nop>", {})
+map("n", "q", "<nop>", {})
+map("n", "J", "<nop>", {})
+map("n", "L", "<nop>", {})
+map("n", "H", "<nop>", {})
 map("n", "<leader>e", "<cmd>Lexplore<cr>", { desc = "Explorer" })
 
 -- borrado especial
 map("v", "d", '"_d', { noremap = true, silent = true })
 map("n", "dd", '"_dd', { noremap = true, silent = true })
 
---desplazamiento suave 
+--desplazamiento suave
 map("n", "<C-u>", "6k", { noremap = true, silent = true })
 map("n", "<C-d>", "6j", { noremap = true, silent = true })
 
 -- agregar indentación al codigo
 map("v", "<", "<gv", { noremap = true, silent = true })
 map("v", ">", ">gv", { noremap = true, silent = true })
+
+-- pega el contenido del portapapeles en el registro 0
+map("n", "<leader>p", '"0p', { noremap = true, silent = true })
+
+-- modifica el texto donde el cursor se encuentre
+map("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])

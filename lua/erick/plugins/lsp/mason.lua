@@ -31,7 +31,6 @@ return {
          ensure_installed = {
             "cssls",
             "emmet_ls",
-            "gopls",
             "html",
             "jsonls",
             "lemminx",
@@ -39,9 +38,10 @@ return {
             "marksman",
             "phpactor",
             "tsserver",
-            "yamlls",
+            "taplo",
             "tailwindcss",
-            "volar"
+            "volar",
+            "jdtls"
          },
          -- auto-install configured servers (with lspconfig)
          automatic_installation = true, -- not the same as ensure_installed

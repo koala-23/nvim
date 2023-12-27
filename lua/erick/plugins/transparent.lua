@@ -1,5 +1,5 @@
 return {
     "xiyaowong/nvim-transparent",
-    enabled = true,
+    enabled = false,
     config = true
 }

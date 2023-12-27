@@ -19,7 +19,7 @@ return {
 
       local opts = { noremap = true, silent = true }
 
-      local on_attach = function(client, bufnr)
+      local on_attach = function(_, bufnr)
          opts.buffer = bufnr
 
          opts.desc = "Show LSP references"
@@ -40,11 +40,11 @@ return {
          opts.desc = "Show line diagnostics"
          map("n", "<leader>vd", vim.diagnostic.open_float, opts)
 
-         opts.desc = "Go to previous diagnostic"
-         map("n", "[d", vim.diagnostic.goto_prev, opts)
-
-         opts.desc = "Go to next diagnostic"
-         map("n", "]d", vim.diagnostic.goto_next, opts)
+         -- opts.desc = "Go to previous diagnostic"
+         -- map("n", "[d", vim.diagnostic.goto_prev, opts)
+         --
+         -- opts.desc = "Go to next diagnostic"
+         -- map("n", "]d", vim.diagnostic.goto_next, opts)
 
          opts.desc = "Show documentation for what is under cursor"
          map("n", "K", vim.lsp.buf.hover, opts)
@@ -126,7 +126,7 @@ return {
          "html",
          "cssls",
          "tsserver",
-         "vimls",
+         "jdtls"
       }
       for _, server in pairs(servers) do
          lspconfig[server].setup({
@@ -137,8 +137,7 @@ return {
       end
 
       local server_inactivos = {
-         "gopls",
-         "yamlls",
+         "taplo",
          "jsonls",
          "marksman",
          "lemminx",

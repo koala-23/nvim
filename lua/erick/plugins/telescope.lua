@@ -6,34 +6,18 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-lua/popup.nvim",
       "nvim-tree/nvim-web-devicons",
-      "nvim-telescope/telescope-fzy-native.nvim",
-      "nvim-telescope/telescope-file-browser.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
-      {
-         "nvim-telescope/telescope-fzf-native.nvim",
-         build = "make",
-         dependencies = {
-            "junegunn/fzf.vim",
-            dependencies = {
-               {
-                  "tpope/vim-dispatch",
-                  cmd = { "Make", "Dispatch" },
-               },
-               {
-                  "junegunn/fzf",
-                  build = ":call fzf#install()",
-               },
-            },
-         },
-      },
+      "nvim-telescope/telescope-file-browser.nvim",
+      "nvim-telescope/telescope-fzy-native.nvim",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
    },
    config = function()
-      require("telescope").load_extension("notify")
-      require("telescope").load_extension("file_browser")
-      require("telescope").load_extension("ui-select")
-      require("telescope").load_extension("fzf")
+      require("telescope").load_extension "notify"
+      require("telescope").load_extension "file_browser"
+      require("telescope").load_extension "ui-select"
+      require("telescope").load_extension "fzf"
 
-      require("telescope").setup({
+      require("telescope").setup {
          defaults = {
             initial_mode = "insert",
             file_ignore_patterns = { "%.zip", "lazy-lock.json", "node_modules", "live-server", "vendor" },
@@ -42,8 +26,8 @@ return {
             winblend = 0,
             layout_strategy = "flex",
             layout_config = {
-               width = 0.92,
-               height = 0.82,
+               width = 0.85,
+               height = 0.8,
                prompt_position = "top",
                horizontal = {
                   preview_width = 0.6,
@@ -64,7 +48,6 @@ return {
                   ["<C-h>"] = "which_key",
                },
                i = {
-                  ["<C-h>"] = "which_key",
                   ["<C-c>"] = "close",
                },
             },
@@ -86,7 +69,7 @@ return {
 
             fzf_writer = {
                use_highlighter = false,
-               minimum_grep_characters = 6,
+               minimum_grep_characters = 5,
             },
             hop = {
                -- keys define your hop keys in order; defaults to roughly lower- and uppercased home row
@@ -109,7 +92,7 @@ return {
                reset_selection = true,
             },
             ["ui-select"] = {
-               require("telescope.themes").get_dropdown({
+               require("telescope.themes").get_dropdown {
                   borderchars = {
                      prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
                      results = { "─", "│", "─", "│", "╭", "╮", "┤", "├" },
@@ -117,65 +100,66 @@ return {
                   },
                   width = 0.8,
                   previewer = false,
-               }),
-            }
-         }
-      })
+               },
+            },
+         },
+      }
    end,
    keys = {
-      { "<leader>ff", "<cmd>Telescope find_files<cr>",  desc = "Find files",  opts },
-      { "<leader>fz", "<cmd>FZF<cr>",         desc = "FZF",         opts },
       { "<leader>fs", "<cmd>Telescope grep_string<cr>", desc = "Grep string", opts },
-      { "<leader>gs", "<cmd>Telescope git_status<cr>",  desc = "Git Status",  opts, },
-      { "<leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Git commits", opts },
       { "<leader>fw", "<cmd>Telescope live_grep<cr>",   desc = "Live grep",   opts },
+      { "<leader>gs", "<cmd>Telescope git_status<cr>",  desc = "Git Status",  opts },
+      { "<leader>fc", "<cmd>Telescope git_commits<cr>", desc = "Git commits", opts },
       {
-         "<leader>gf",
-         function() return require("telescope.builtin").git_files({ show_untracked = true }) end,
+         "<leader>ff",
+         function()
+            local opt = { show_untracked = true }
+            local ok = pcall(require("telescope.builtin").git_files, opt)
+            if not ok then
+               require("telescope.builtin").find_files(opt)
+            end
+         end,
          desc = "Git files",
-         opts
+         opts,
       },
       {
          "<leader>fh",
          function()
-            return require("telescope.builtin").find_files(
-               {
-                  prompt_title = " Hidden Files",
-                  hidden = true,
-                  file_ignore_patterns = {},
-               }
-            )
+            return require("telescope.builtin").find_files {
+               prompt_title = " Hidden Files",
+               hidden = true,
+               file_ignore_patterns = {},
+            }
          end,
          desc = "Find hidden files",
-         opts
+         opts,
       },
       {
          "<leader>fp",
          function()
-            return require("telescope").extensions.file_browser.file_browser({
+            return require("telescope").extensions.file_browser.file_browser {
                cwd = "~/.config/nvim-2/lua/erick/plugins",
                prompt_title = " Neovim Config ",
-            })
+            }
          end,
          desc = "Open neovim config",
-         opts
+         opts,
       },
       {
          "<leader>fb",
          function()
-            return require("telescope").extensions.file_browser.file_browser({
+            return require("telescope").extensions.file_browser.file_browser {
                path = "%:p:h",
                select_buffer = true,
-               file_ignore_patterns = {}
-            })
+               file_ignore_patterns = {},
+            }
          end,
          desc = "File browser relative",
          opts,
       },
-      { "<leader>fk", "<cmd>Telescope keymaps<cr>",                         desc = "Keymaps",     opts },
-      { "<leader>fa", "<cmd>Telescope help_tags<cr>",                       desc = "Help tags",   opts },
-      { "<leader>ft", "<cmd>TodoTelescope<cr>",                             desc = "ToDo",        opts },
-      { "<leader>th", "<cmd>Telescope colorscheme enable_preview=true<cr>", desc = "Colorscheme", opts, },
-      { "<leader>fd", "<cmd>Telescope diagnostics<cr>",                     desc = "Diagnostics", opts },
+      { "<leader>fk", "<cmd>Telescope keymaps<cr>",                          desc = "Keymaps",     opts },
+      { "<leader>fa", "<cmd>Telescope help_tags<cr>",                        desc = "Help tags",   opts },
+      { "<leader>tn", "<cmd>Telescope todo-comments keywords=TODO,NOTE<cr>", desc = "Todos",       opts },
+      { "<leader>tf", "<cmd>Telescope todo-comments keywords=FIX,BUG<cr>",   desc = "Todo Fix",    opts },
    },
 }
