@@ -19,7 +19,7 @@ return {
         require("telescope").setup {
             defaults = {
                 initial_mode = "insert",
-                file_ignore_patterns = { "%.zip", "lazy-lock.json", "node_modules/", "live-server/", "vendor/" },
+                file_ignore_patterns = { "%.zip","%.class", "lazy-lock.json", "node_modules/", "live-server/", "vendor/" },
                 prompt_prefix = "  ",
                 selection_caret = "󱞩 ",
                 winblend = 0,

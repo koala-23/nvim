@@ -32,9 +32,7 @@ return {
                 "emmet_ls",
                 "html",
                 "jsonls",
-                "lemminx",
                 "lua_ls",
-                "marksman",
                 "phpactor",
                 "tsserver",
                 "tailwindcss",
@@ -52,7 +50,7 @@ return {
             ensure_installed = {
                 "prettier",
                 "stylelint",
-"eslint-lsp"
+                "eslint-lsp"
             },
             -- auto-install configured servers (with lspconfig)
             automatic_installation = true,

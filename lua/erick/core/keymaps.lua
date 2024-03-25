@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- Splits
-map("n", "<leader>Q", ":q!<CR>", { noremap = true, silent = true, desc = "Splits quit" })
+map("n", "<leader>qq", ":bd!<CR>", { noremap = true, silent = true, desc = "Splits quit" })
 map("n", "<C-q>", ":bd<CR>", { noremap = true, silent = true, desc = "Splits quit" })
 map("n", "<A-v>", ":vnew +set\\ buftype=nofile<CR>", { noremap = true, silent = true, desc = "Splits vertical" })
 map("n", "<A-s>", ":new +set\\ buftype=nofile<CR>", { noremap = true, silent = true, desc = "Splits horizontal" })
@@ -17,8 +17,6 @@ map("n", "<C-w>h", "<C-w>H", { noremap = true, silent = true, desc = "split move
 map("n", "<C-w>j", "<C-w>J", { noremap = true, silent = true, desc = "split move down" })
 map("n", "<C-w>k", "<C-w>K", { noremap = true, silent = true, desc = "split move up" })
 map("n", "<C-w>l", "<C-w>L", { noremap = true, silent = true, desc = "split move right" })
-map("n","<Tab>n", ":bnext<CR>", { noremap = true, silent = true, desc = "bnext" })
-map("n","<Tab>p", ":bprev<CR>", { noremap = true, silent = true, desc = "bnext" })
 
 -- indentar codigo
 map({ "n", "v" }, '<A-F>', 'mm=G`m', { noremap = true, silent = true, desc = "Indent code without plugin" })

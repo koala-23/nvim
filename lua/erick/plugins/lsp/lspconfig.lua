@@ -27,6 +27,9 @@ return {
             opts.desc = "Show LSP definitions"
             map("n", "gd", vim.lsp.buf.definition, opts)
 
+            opts.desc = "Show LSP implementation"
+            map("n", "gi", vim.lsp.buf.implementation, opts)
+
             opts.desc = "See available code actions"
             map({ "n", "v" }, "<leader>vc", vim.lsp.buf.code_action, opts)
 
@@ -89,7 +92,7 @@ return {
             "html",
             "cssls",
             "tsserver",
-            "jdtls",
+            -- "jdtls",
             "emmet_ls",
             "angularls",
             "phpactor",
@@ -104,19 +107,6 @@ return {
                 flags = lsp_flags,
                 on_attach = on_attach,
                 capabilities = capabilities,
-            })
-        end
-
-        local server_inactivos = {
-            "marksman",
-            "lemminx",
-        }
-
-        for _, server in pairs(server_inactivos) do
-            lspconfig[server].setup({
-                flags = lsp_flags,
-                on_attach = on_attach,
-                autostart = false,
             })
         end
     end
